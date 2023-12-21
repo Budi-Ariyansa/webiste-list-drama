@@ -1,5 +1,5 @@
 export default function Table() {
-    const data = ['1.', 'Bussines Proposal', '2020', '10/10']
+    const data = ['1..', 'Bussines Proposal', '2020', '10/10']
     return (
         <table className='table-auto border-2 border-white'>
             <thead>
