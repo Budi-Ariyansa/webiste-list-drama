@@ -4,7 +4,7 @@ import Table from '../../components/Table'
 export default function Home() {
     return (
         <div className='container mx-auto'>
-            <h2 className='text-center text-2xl py-5 font-bold'>K-Drama List Budi's</h2>
+            <h2 className='text-center text-2xl py-5 font-bold'>K-Drama List Budi</h2>
 
             <div className='flex justify-center p-2'>
                 <Table />    
