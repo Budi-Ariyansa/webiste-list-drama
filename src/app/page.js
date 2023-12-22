@@ -7,28 +7,28 @@ export default async function Home() {
     return (
         <main>
             <div className='container mx-auto'>
-                <h2 className='text-center text-2xl py-5 font-bold'>K-Drama List Budi</h2>
+                <h2 className='text-center text-2xl py-5 font-bold text-sm md:text-base'>K-Drama List Budi</h2>
 
                 <div className='flex justify-center'>
-                    <table className='m-3 border-2 border-white'>
+                    <table className='m-3 border border-black'>
                         <thead className="text-left bg-cyan-800">
                             <tr>
-                                <th className='border-2 border-white p-2'>No.</th>
-                                <th className='border-2 border-white p-2'>Drama Name</th>
-                                <th className='border-2 border-white p-2'>Relase Year</th>
-                                <th className='border-2 border-white p-2'>Rating</th>
-                                <th className='border-2 border-white p-2'>Watching On</th>
+                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>No.</th>
+                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>Drama Name</th>
+                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>Relase Year</th>
+                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>Rating</th>
+                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>Watching On</th>
                             </tr>
                         </thead>
                         <tbody>
                         {
                             rows.map((row) => (
                                 <tr key={row.kdrama_id} >
-                                    <td className='border-2 border-white p-2'>{row.kdrama_id}</td>
-                                    <td className='border-2 border-white p-2'>{row.kdrama_name}</td>
-                                    <td className='border-2 border-white p-2'>{row.kdrama_release_date}</td>
-                                    <td className='border-2 border-white p-2'>{row.kdrama_rating}</td>  
-                                    <td className='border-2 border-white p-2'>{row.kdrama_watchin_on}</td>  
+                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_id}</td>
+                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_name}</td>
+                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_release_date}</td>
+                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_rating}</td>  
+                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_watchin_on}</td>  
                                 </tr>
                             ))
                         }
