@@ -4,10 +4,11 @@ import { sql } from "@vercel/postgres";
 export default async function Home() {
     const { rows } = await sql`
         select 
-            kdrama_id, kdrama_name, kdrama_total_episode, to_char(kdrama_publish_date, 'Mon dd YYYY') as kdrama_publish_date,
+            kdrama_id, kdrama_name, kdrama_total_episode, to_char(kdrama_publish_date, 'Mon dd, YYYY') as kdrama_publish_date,
             kdrama_rating, kdrama_where_to_watch, kdrama_image_url
         from list_kdrama
     `
+    console.log(rows.kdrama_name)
     return (
         <>
             <div className='header bg-slate-500'>
@@ -34,6 +35,10 @@ export default async function Home() {
                                             <div className='flex text-[13px] md:text-base'>
                                                 <p className='font-semibold'>Total Episode :</p>
                                                 <p className='pl-1'>{drama.kdrama_total_episode} episode</p>
+                                            </div>
+                                            <div className='flex text-[13px] md:text-base'>
+                                                <p className='font-semibold'>Status :</p>
+                                                <p className='pl-1'>{drama.kdrama_status}</p>
                                             </div>
                                             <div className='flex text-[13px] md:text-base'>
                                                 <p className='font-semibold'>Publish Date :</p>
