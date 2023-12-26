@@ -17,7 +17,7 @@ export default async function Home() {
                     <div className='flex flex-col'>
                         {
                             rows.map((drama) => (
-                                <div className='card rounded-2xl shadow-xl flex flex-col m-3 border border-2 border-gray-400 p-3 md:flex-row' key={drama.kdrama_id}>
+                                <div className='card rounded-2xl shadow-xl flex flex-col m-3 p-3 md:flex-row' key={drama.kdrama_id}>
                                     <div className='shrink'>
                                         <Image
                                             src={drama.kdrama_image_url}
