@@ -28,7 +28,7 @@ export default async function Home() {
                                         />
                                     </div>
                                     <div className='flex-col pl-0 md:pl-3'>
-                                        <p className='text-xl md:w-[350px] w-[300px] md:text-2xl font-bold mb-3 mt-2'>{drama.kdrama_name}</p>
+                                        <p className='text-xl md:w-[350px] w-[200px] md:text-2xl font-bold mb-3 mt-2'>{drama.kdrama_name}</p>
                                         <div className='flex text-[12px] md:text-base'>
                                             <p>Total Episode :</p>
                                             <p className='pl-1'>{drama.kdrama_total_episode} episode</p>
@@ -43,7 +43,7 @@ export default async function Home() {
                                         </div>
                                         <div className='flex text-[12px] md:text-base'>
                                             <p>Watch :</p>
-                                            <p className='pl-1 md:w-[350px] w-[300px]'>{drama.kdrama_where_to_watch}</p>
+                                            <p className='pl-1 md:w-[350px] w-[200px]'>{drama.kdrama_where_to_watch}</p>
                                         </div>
                                     </div>
                                 </div>
