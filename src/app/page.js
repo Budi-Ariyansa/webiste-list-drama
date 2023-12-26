@@ -1,40 +1,55 @@
 import Image from 'next/image'
-
 import { sql } from "@vercel/postgres";
 
 export default async function Home() {
-    const { rows } = await sql`SELECT * FROM list_kdrama`
+    const { rows } = await sql`
+        select 
+            kdrama_id, kdrama_name, kdrama_total_episode, to_char(kdrama_publish_date, 'Mon dd YYYY') as kdrama_publish_date,
+            kdrama_rating, kdrama_where_to_watch, kdrama_image_url
+        from list_kdrama
+    `
     return (
         <main>
             <div className='container mx-auto'>
-                <h2 className='text-center text-2xl py-5 font-bold text-sm md:text-base'>K-Drama List Budi</h2>
+                <h2 className='text-center py-5 font-bold text-xl md:text-3xl'>My Favorite K-Drama</h2>
 
                 <div className='flex justify-center'>
-                    <table className='m-3 border border-black'>
-                        <thead className="text-left bg-cyan-800">
-                            <tr>
-                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>No.</th>
-                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>Drama Name</th>
-                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>Relase Year</th>
-                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>Rating</th>
-                                <th className='border border-black p-2 text-[10px] md:text-base text-white'>Watching On</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div className='flex flex-col'>
                         {
-                            rows.map((row) => (
-                                <tr key={row.kdrama_id} >
-                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_id}</td>
-                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_name}</td>
-                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_release_date}</td>
-                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_rating}</td>  
-                                    <td className='border border-black p-2 text-[10px] md:text-base'>{row.kdrama_watchin_on}</td>  
-                                </tr>
+                            rows.map((drama) => (
+                                <div className='card rounded-2xl shadow-xl flex flex-col m-3 border border-2 border-gray-400 p-3 md:flex-row' key={drama.kdrama_id}>
+                                    <div className='shrink'>
+                                        <Image
+                                            src={drama.kdrama_image_url}
+                                            alt={drama.kdrama_name}
+                                            width={250}
+                                            height={300}
+                                            className='w-auto h-auto rounded-t-lg'
+                                        />
+                                    </div>
+                                    <div className='flex-col pl-0 md:pl-3'>
+                                        <p className='text-xl md:w-[350px] w-[200px] md:text-2xl font-bold mb-3 mt-2'>{drama.kdrama_name}</p>
+                                        <div className='flex text-[12px] md:text-base'>
+                                            <p>Total Episode :</p>
+                                            <p className='pl-1'>{drama.kdrama_total_episode} episode</p>
+                                        </div>
+                                        <div className='flex text-[12px] md:text-base'>
+                                            <p>Publish Date :</p>
+                                            <p className='pl-1'>{drama.kdrama_publish_date}</p>
+                                        </div>
+                                        <div className='flex text-[12px] md:text-base'>
+                                            <p>My Rating :</p>
+                                            <p className='pl-1'>{drama.kdrama_rating}/10</p>
+                                        </div>
+                                        <div className='flex text-[12px] md:text-base'>
+                                            <p>Watch :</p>
+                                            <p className='pl-1 md:w-[350px] w-[200px]'>{drama.kdrama_where_to_watch}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             ))
                         }
-                        </tbody>
-                        
-                    </table>
+                    </div>
                 </div>
             </div>
         </main>
