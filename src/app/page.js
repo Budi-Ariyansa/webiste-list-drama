@@ -20,8 +20,8 @@ export default async function Home() {
                 </div>
                 <main>
                     <div className='container mx-auto'>
-                        <div className='flex justify-center'>
-                            <div className='flex flex-col'>
+                        <div className='flex md:justify-center '>
+                            <div className='grid grid-cols-1 md:grid-cols-2'>
                                 {
                                     rows.map((drama) => (
                                         <div className='card rounded-2xl shadow-xl flex flex-col m-3 p-3 md:flex-row' key={drama.kdrama_id}>
