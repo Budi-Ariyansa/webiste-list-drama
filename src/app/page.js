@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { createClient } from "@vercel/postgres";
 
+export const revalidate = 20 // revalidate at most every hour
+
 async function getData() {
     const client = createClient()
     await client.connect()
