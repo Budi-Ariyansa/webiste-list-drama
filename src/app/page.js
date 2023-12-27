@@ -35,6 +35,7 @@ export default async function Home() {
                                                                 width={80}
                                                                 height={80}
                                                                 className='absolute top-0 right-0'
+                                                                alt="<a href='https://pngtree.com/freepng/100-guarantee-grunge-stamp-print_5265625.html'>png image from pngtree.com/</a>"
                                                             />
                                                         )
                                                     }
