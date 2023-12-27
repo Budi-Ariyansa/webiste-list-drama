@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import { createClient } from "@vercel/postgres";
 
-export default async function Home() {
+async function getData() {
     const client = createClient()
     await client.connect()
-
     try {
         const { rows, fields } = await client.sql`
             select 
@@ -13,6 +12,25 @@ export default async function Home() {
             from list_kdrama
             order by kdrama_id asc
         `
+        return rows
+    } finally {
+        await client.end()
+    }
+}
+
+export default async function Home() {
+    // const client = createClient()
+    // await client.connect()
+
+    try {
+        // const { rows, fields } = await client.sql`
+        //     select 
+        //         kdrama_id, kdrama_name, kdrama_total_episode, kdrama_status, to_char(kdrama_publish_date, 'Mon dd, YYYY') as kdrama_publish_date,
+        //         kdrama_rating, kdrama_where_to_watch, kdrama_image_url, kdrama_guarantee
+        //     from list_kdrama
+        //     order by kdrama_id asc
+        // `
+        const rows = await getData()
         return (
             <>
                 <div className='header bg-slate-500'>
@@ -81,6 +99,6 @@ export default async function Home() {
             </>
         )
     } finally {
-        await client.end()
+        // await client.end()
     }
 }
