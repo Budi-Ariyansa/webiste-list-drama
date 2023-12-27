@@ -9,14 +9,15 @@ export default async function Home() {
         const { rows, fields } = await client.sql`
             select 
                 kdrama_id, kdrama_name, kdrama_total_episode, kdrama_status, to_char(kdrama_publish_date, 'Mon dd, YYYY') as kdrama_publish_date,
-                kdrama_rating, kdrama_where_to_watch, kdrama_image_url
+                kdrama_rating, kdrama_where_to_watch, kdrama_image_url, kdrama_guarantee
             from list_kdrama
             order by kdrama_id asc
         `
         return (
             <>
                 <div className='header bg-slate-500'>
-                    <h2 className='text-white text-center py-5 font-bold text-xl md:text-3xl'>My Favorite K-Drama</h2>
+                    <p className='text-white text-center pb-1 pt-3 font-bold text-xl md:text-3xl'>My List K-Drama </p>
+                    <p className='text-white text-center pb-3 font-semibold text-sm md:text-1xl'>created by : @budiariyansa</p>
                 </div>
                 <main>
                     <div className='container mx-auto'>
@@ -24,8 +25,20 @@ export default async function Home() {
                             <div className='grid grid-cols-1 md:grid-cols-2'>
                                 {
                                     rows.map((drama) => (
-                                        <div className='card rounded-2xl shadow-xl flex flex-col m-3 p-3 md:flex-row' key={drama.kdrama_id}>
+                                        <div className='card rounded-2xl shadow-2xl flex flex-col m-3 p-3 md:flex-row' key={drama.kdrama_id}>
                                             <div className='shrink'>
+                                                <div className='relative'>
+                                                    {
+                                                        drama.kdrama_guarantee === 1 && (
+                                                            <Image 
+                                                                src='/static/images/guarantee.png'
+                                                                width={80}
+                                                                height={80}
+                                                                className='absolute top-0 right-0'
+                                                            />
+                                                        )
+                                                    }
+                                                </div>
                                                 <Image
                                                     src={drama.kdrama_image_url}
                                                     alt={drama.kdrama_name}
@@ -53,7 +66,7 @@ export default async function Home() {
                                                     <p className='pl-1'>{drama.kdrama_rating}/10</p>
                                                 </div>
                                                 <div className='flex text-[13px] md:text-base'>
-                                                    <p className='font-semibold'>Watch :</p>
+                                                    <p className='font-semibold md:w-[55px] w-[45px]'>Watch :</p>
                                                     <p className='pl-1 md:w-[350px] w-[250px]'>{drama.kdrama_where_to_watch}</p>
                                                 </div>
                                             </div>
