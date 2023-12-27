@@ -20,7 +20,7 @@ export default async function Home() {
                 </div>
                 <main>
                     <div className='container mx-auto'>
-                        <div className='flex md:justify-center '>
+                        <div className='flex justify-center '>
                             <div className='grid grid-cols-1 md:grid-cols-2'>
                                 {
                                     rows.map((drama) => (
