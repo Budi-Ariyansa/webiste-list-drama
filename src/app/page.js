@@ -23,7 +23,6 @@ async function getData() {
 export default async function Home() {
     // const client = createClient()
     // await client.connect()
-
     try {
         // const { rows, fields } = await client.sql`
         //     select 
