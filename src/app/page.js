@@ -62,7 +62,7 @@ export default async function Home() {
                                                 <Image
                                                     src={drama.kdrama_image_url}
                                                     alt={drama.kdrama_name}
-                                                    width={250}
+                                                    width={300}
                                                     height={300}
                                                     className='w-auto h-auto rounded-t-lg'
                                                 />
