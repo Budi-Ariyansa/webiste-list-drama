@@ -62,9 +62,9 @@ export default async function Home() {
                                                 <Image
                                                     src={drama.kdrama_image_url}
                                                     alt={drama.kdrama_name}
-                                                    width={300}
+                                                    width={330}
                                                     height={300}
-                                                    className='w-auto h-auto rounded-t-lg'
+                                                    className='w-100 h-auto rounded-t-lg'
                                                 />
                                             </div>
                                             <div className='flex-col pl-0 md:pl-3'>
