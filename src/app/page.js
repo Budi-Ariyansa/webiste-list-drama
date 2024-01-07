@@ -10,7 +10,7 @@ async function getData() {
         const { rows, fields } = await client.sql`
             select 
                 kdrama_id, kdrama_name, kdrama_total_episode, kdrama_status, to_char(kdrama_publish_date, 'Mon dd, YYYY') as kdrama_publish_date,
-                kdrama_rating, kdrama_where_to_watch, kdrama_image_url, kdrama_guarantee
+                kdrama_rating, kdrama_where_to_watch, kdrama_image_url, kdrama_guarantee, kdrama_duration, kdrama_content_rating
             from list_kdrama
             order by kdrama_id asc
         `
@@ -71,6 +71,14 @@ export default async function Home() {
                                             <div className='flex text-[13px] md:text-base'>
                                                 <p className='font-semibold'>Publish Date :</p>
                                                 <p className='pl-1'>{drama.kdrama_publish_date}</p>
+                                            </div>
+                                            <div className='flex text-[13px] md:text-base'>
+                                                <p className='font-semibold'>Duration :</p>
+                                                <p className='pl-1'>{drama.kdrama_duration}</p>
+                                            </div>
+                                            <div className='flex text-[13px] md:text-base'>
+                                                <p className='font-semibold'>Content Rating :</p>
+                                                <p className='pl-1'>{drama.kdrama_content_rating}</p>
                                             </div>
                                             <div className='flex text-[13px] md:text-base'>
                                                 <p className='font-semibold'>My Rating :</p>
