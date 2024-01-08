@@ -1,6 +1,5 @@
 import { createClient } from "@vercel/postgres";
 import Card from './ui/card';
-import Filter from "./ui/filter";
 
 export const revalidate = 0 // revalidate at most every hour
 
