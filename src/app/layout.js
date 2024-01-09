@@ -1,4 +1,5 @@
 import { Source_Sans_3 } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -14,7 +15,10 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className={SS3.className}>
 				{children}
-				<script src="/flowbite/dist/flowbite.min.js"></script>
+				{/* deploy */}
+				<Script src="/flowbite/dist/flowbite.min.js"></Script>
+				{/* dev */}
+				{/* <script src="/flowbite/dist/flowbite.min.js"></script> */}
 			</body>
 		</html>
 	)
