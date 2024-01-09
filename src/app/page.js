@@ -27,7 +27,7 @@ export default async function Home() {
 
     return (
         <>
-            <div className='header bg-slate-500 ' id='header'>
+            <div className='header bg-slate-500' id='header'>
                 <p className='text-white text-center pb-1 pt-3 font-bold text-xl md:text-3xl'>My List K-Drama </p>
                 <p className='text-white text-center pb-3 font-semibold text-sm md:text-1xl'>created by : @budiariyansa</p>
             </div>
