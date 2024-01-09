@@ -12,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={SS3.className}>{children}</body>
+			<body className={SS3.className}>
+				{children}
+				<script src="/flowbite/dist/flowbite.min.js"></script>
+			</body>
 		</html>
 	)
 }

@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { createClient } from "@vercel/postgres";
 
+const revalidate = 0
+
 async function getData() {
     const client = createClient()
     await client.connect()

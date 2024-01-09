@@ -1,6 +1,7 @@
 import { createClient } from "@vercel/postgres";
 import Card from './ui/card-component';
 import Filter from "./ui/filter-component";
+import Toast from "./ui/toast-component";
 
 export const revalidate = 0 // revalidate at most every hour
 
@@ -56,7 +57,13 @@ export default async function Home() {
                     </div>
                 </div>
             </main>
-            <div className='sticky bottom-0'>
+            <div className="sticky bottom-0">
+                <div className="p-3">
+                    <Toast 
+                        title='Informasi Penting !'
+                        content='Rating yang diberikan merupakan rating pribadi bukan rating umum. Dan bisa berubah sewaktu - waktu sesuai pendapat penulis 😊'
+                    />
+                </div>
                 <a href='#header' className='text-3xl font-bold absolute bottom-0 right-0 h-[50px] w-[50px] bg-gray-600 text-center rounded-lg text-white m-2 hover:bg-gray-900'>&#x2191;</a>
             </div>
         </>

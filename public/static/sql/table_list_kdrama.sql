@@ -41,7 +41,13 @@ values
     ('Welcome to Samdalri (2023)', 16, 'Ongoing (Belum nonton)', '2022-12-02', 0.0, 'Netflix', 'https://i.pinimg.com/736x/8b/59/f6/8b59f61f52ca172b5858ba5447124d9b.jpg', 0, current_timestamp, current_timestamp, NULL, NULL),
     ('My Demon (2023)', 16, 'Ongoing (Belum nonton)', '2023-11-24', 0.0, 'Netflix', 'https://i.pinimg.com/736x/7c/06/d4/7c06d41c080a405e317d1c5cfc02712e.jpg', 0, current_timestamp, current_timestamp, NULL, NULL),
     ('Healer (2014)', 20, 'Complete', '2014-12-08', 9.0, 'Netflix, Viki, Apple TV, Prime Video, iQIYI & Kocowa', 'https://i.pinimg.com/564x/ab/1e/c0/ab1ec07d6e91a65521224d981b01be38.jpg', 1, current_timestamp, current_timestamp, NULL, NULL),
-    ('Hometown Cha-Cha-Cha (2021)', 16, 'Complete', '2021-08-28', 9.0, 'Netflix & TVING', 'https://i.pinimg.com/564x/85/c5/51/85c551e58a84fff0359b2e3b7359316b.jpg', 1, current_timestamp, current_timestamp, NULL, NULL)
-
-
-
+    ('Hometown Cha-Cha-Cha (2021)', 16, 'Complete', '2021-08-28', 9.0, 'Netflix & TVING', 'https://i.pinimg.com/564x/85/c5/51/85c551e58a84fff0359b2e3b7359316b.jpg', 1, current_timestamp, current_timestamp, NULL, NULL),
+    ('My Name (2021)', 8, 'Complete', '2021-10-15', 9.0, 'Netflix', 'https://i.pinimg.com/564x/25/a3/ed/25a3ed9454d821b59cf070718c71484b.jpg', 1, current_timestamp, current_timestamp, '50 min.', '18+ Restricted (violence & profanity)'),
+    ('The Glory (2022)', 8, 'Complete', '2022-12-30', 9.0, 'Netflix', 'https://i.pinimg.com/564x/59/cd/62/59cd62eca246a476ebd7c2ecc591fe27.jpg', 1, current_timestamp, current_timestamp, '50 min.', '18+ Restricted (violence & profanity)'),
+    ('Extracurricular (2020)', 10, 'Complete', '2020-04-29', 8.8, 'Netflix', 'https://i.pinimg.com/736x/44/8f/22/448f228620562e2f4c223d79b94fe501.jpg', 0, current_timestamp, current_timestamp, '50 min.', '18+ Restricted (violence & profanity)'),
+    ('The Uncanny Counter (2020) S1', 16, 'Complete', '2020-11-28', 9.6, 'Netflix', 'https://i.pinimg.com/564x/ba/82/f2/ba82f20bab0a6e79295a81b922fd610b.jpg', 1, current_timestamp, current_timestamp, '50 min.', '15+ - Teens 15 or older'),
+    ('Twinkling Watermelon (2023)', 16, 'Complete', '2023-09-25', 9.8, 'TVING, Viki & VIU', 'https://i.pinimg.com/564x/b5/3e/25/b53e258ab751e1ca15eef3039e99d064.jpg', 1, current_timestamp, current_timestamp, '1 hr. 10 min.', '15+ - Teens 15 or older'),
+    ('Bloodhounds (2023)', 8, 'Complete', '2023-06-09', 9.6, 'Netflix', 'https://i.pinimg.com/564x/e7/d4/0e/e7d40e779ac2cce427948c576dfb5780.jpg', 1, current_timestamp, current_timestamp, '60 min.', '18+ Restricted (violence & profanity)'),
+    ('Because This Is My First Life (2017)', 16, 'Complete', '2017-10-09', 9.7, 'Netflix, Viki, K-DRAMA, iQIYI, Disney+ Hotstar, WeTV & Apple TV', 'https://i.pinimg.com/564x/82/07/ba/8207ba7c564fa3a998563e2aa403730a.jpg', 1, current_timestamp, current_timestamp, '1 hr. 10 min.', '15+ - Teens 15 or older'),
+    ('Summer Strike (2022)', 12, 'Complete', '2022-11-21', 8.2, 'Netflix, Viki & Apple TV', 'https://i.pinimg.com/564x/60/07/18/600718a8eea3e38fa65ad8ece2c20cd0.jpg', 0, current_timestamp, current_timestamp, '50 min.', '15+ - Teens 15 or older'),
+    ('Tomorrow (2022)', 16, 'Complete', '2022-04-01', 8.7, 'Netflix', 'https://i.pinimg.com/564x/6e/78/ce/6e78ce716587211d04aec8c7c41f83a3.jpg', 0, current_timestamp, current_timestamp, '60 min.', '15+ - Teens 15 or older')
