@@ -1,18 +1,20 @@
 import { createClient } from "@vercel/postgres";
-import Card from './ui/card-component';
-import Filter from "./ui/filter-component";
+import Filter from "@/app/ui/filter-component";
+import Card from "@/app/ui/card-component";
 
 export const revalidate = 0 // revalidate at most every hour
 
-async function getData() {
+async function getData(filter_year) {
     const client = createClient()
     await client.connect()
     try {
+
         const { rows, fields } = await client.sql`
             select 
                 kdrama_id, kdrama_name, kdrama_total_episode, kdrama_status, to_char(kdrama_publish_date, 'Mon dd, YYYY') as kdrama_publish_date,
                 kdrama_rating, kdrama_where_to_watch, kdrama_image_url, kdrama_guarantee, kdrama_duration, kdrama_content_rating
             from list_kdrama
+            where date_part('year', kdrama_publish_date)::text = ${filter_year}
             order by kdrama_id asc
         `
         return rows
@@ -21,9 +23,10 @@ async function getData() {
     }
 }
 
-export default async function Home() {
-    const rows = await getData()
-
+export default async function Testing({params}) {
+    const filter_year = params.year
+    const rows = await getData(filter_year)
+    
     return (
         <>
             <div className='header bg-slate-500 ' id='header'>
@@ -61,5 +64,4 @@ export default async function Home() {
             </div>
         </>
     )
-
 }

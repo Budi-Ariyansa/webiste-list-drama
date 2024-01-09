@@ -1,4 +1,3 @@
-import { Inter } from 'next/font/google'
 import { Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 
@@ -12,8 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-	<html lang="en">
-		<body className={SS3.className}>{children}</body>
-	</html>
+		<html lang="en">
+			<body className={SS3.className}>{children}</body>
+		</html>
 	)
 }

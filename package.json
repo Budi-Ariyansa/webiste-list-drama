@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.2.9",
     "@vercel/postgres": "^0.5.1",
+    "framer-motion": "^10.17.9",
     "next": "14.0.4",
     "npm": "^10.2.5",
     "react": "^18",
