@@ -32,7 +32,7 @@ export default async function Home() {
                 <p className='text-white text-center pb-3 font-semibold text-sm md:text-1xl'>created by : @budiariyansa</p>
             </div>
             <main>
-                <div className='container mx-auto md:w-[1300px]'>
+                <div className='container mx-auto'>
                     <Filter />
                     <div className='flex justify-center '>
                         <div className='grid grid-cols-1 md:grid-cols-2'>
