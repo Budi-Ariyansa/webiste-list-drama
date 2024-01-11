@@ -1,38 +1,36 @@
-import Link from "next/link"
-import { createClient } from "@vercel/postgres";
+"use client"
 
-const revalidate = 0
+import { Dropdown } from "flowbite-react";
+import Link from "next/link";
 
-async function getData() {
-    const client = createClient()
-    await client.connect()
-    try {
+export default function FilterComponent(props) {
+    const label = props.label
+    const list_data = props.list_data
+    const disabled = props.disabled
 
-        const { rows, fields } = await client.sql`
-            select distinct
-                date_part('year', kdrama_publish_date)::text
-            from list_kdrama
-            order by 1;
-        `
-        return rows
-    } finally {
-        await client.end()
-    }
-}
-export default async function Filter(props) {
-    const list_year = await getData()
+    const list_data_key = Object.keys(list_data[0])
+
     return (
-        <>
-            <div className="text-center mt-3 mb-3">
-                <p className="font-semibold">Tahun : </p>
-                <div className="overflow-x-auto p-3">
-                    {
-                        list_year.map((year, index) => (
-                            <Link key={index} href={`/filter/${year.date_part}`} className="p-2 m-1 bg-slate-500 rounded-lg text-white">{year.date_part}</Link>
-                        ))
-                    }
-                </div>
-            </div>
-        </>
+        <Dropdown dismissOnClick={false} label={label} disabled={disabled}>
+            {
+                list_data.map((data, index) => (
+                    <Dropdown.Item as={Link} href={`/filter/${data[list_data_key]}`} key={index}>{data[list_data_key]}</Dropdown.Item>
+                ))
+            }
+        </Dropdown>
     )
+    // return (
+    //     <>
+    //         <div className="text-center mt-3 mb-3">
+    //             <p className="font-semibold">Tahun : </p>
+    //             <div className="overflow-x-auto p-3">
+    //                 {
+    //                     list_year.map((year, index) => (
+    //                         <Link key={index} href={`/filter/${year.date_part}`} className="p-2 m-1 bg-slate-500 rounded-lg text-white">{year.date_part}</Link>
+    //                     ))
+    //                 }
+    //             </div>
+    //         </div>
+    //     </>
+    // )
 }

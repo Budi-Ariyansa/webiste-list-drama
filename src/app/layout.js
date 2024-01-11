@@ -1,4 +1,5 @@
 import { Source_Sans_3 } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
 			<body className={SS3.className}>
 				{children}
 				{/* deploy */}
-				<Script src="/flowbite/dist/flowbite.min.js"></Script>
+				{/* <Script src="/flowbite/dist/flowbite.min.js"></Script> */}
 				{/* dev */}
 				{/* <script src="/flowbite/dist/flowbite.min.js"></script> */}
 			</body>
