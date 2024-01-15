@@ -15,7 +15,7 @@ export default function CardComponent(props) {
 
     return (
         <>
-            <div className='card rounded-2xl shadow-2xl flex flex-col m-1 md:m-3 p-3 md:flex-row' key={kdrama_id}>
+            <div className='card rounded-2xl shadow-2xl flex flex-col m-1 md:p-2 md:m-2 md:flex-row' key={kdrama_id}>
                 <div className='shrink'>
                     <div className='relative'>
                         {
@@ -35,11 +35,11 @@ export default function CardComponent(props) {
                         alt={kdrama_name}
                         width={330}
                         height={300}
-                        className='w-100 h-auto rounded-t-lg'
+                        className='w-100 h-auto rounded-t-lg md:rounded-lg'
                     />
                 </div>
-                <div className='flex-col lg:w-[300px] pl-0 md:pl-3'>
-                    <p className='text-sm md:w-[350px] w-[170px] md:text-2xl lg:text-lg lg:w-[300px] font-bold mb-3 mt-2'>{kdrama_name}</p>
+                <div className='flex-col lg:w-[300px] p-2 md:pl-3'>
+                    <p className='text-sm md:w-[350px] w-[170px] md:text-2xl lg:text-lg lg:w-[300px] font-bold mb-1 mt-1'>{kdrama_name}</p>
                     <div className='grid grid-flow-col auto-cols-max text-[10px] md:text-base lg:text-xs'>
                         <p className='font-semibold'>Total Episode :</p>
                         <p className='pl-1'>{kdrama_total_episode} episode</p>
@@ -66,7 +66,7 @@ export default function CardComponent(props) {
                     </div>
                     <div className='grid grid-flow-col auto-cols-max text-[10px] md:text-base lg:text-xs'>
                         <p className='font-semibold'>Watch :</p>
-                        <p className='pl-1 w-[150px] md:w-auto'>{kdrama_where_to_watch}</p>
+                        <p className='pl-1 w-[150px] md:w-[250px]'>{kdrama_where_to_watch}</p>
                     </div>
                 </div>
             </div>

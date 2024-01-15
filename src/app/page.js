@@ -2,6 +2,7 @@ import { createClient } from "@vercel/postgres";
 import CardComponent from './ui/card-component';
 import FilterComponent from "./ui/filter-component";
 import ToastComponent from "./ui/toast-component";
+import FooterComponent from "./ui/footer-component";
 
 export const revalidate = 0 // revalidate at most every hour
 
@@ -81,6 +82,7 @@ export default async function Home() {
                 </div>
                 <a href='#header' className='text-3xl font-bold absolute bottom-0 right-0 h-[50px] w-[50px] bg-gray-600 text-center rounded-lg text-white m-2 hover:bg-gray-900'>&#x2191;</a>
             </div>
+            <FooterComponent />
         </>
     )
 
