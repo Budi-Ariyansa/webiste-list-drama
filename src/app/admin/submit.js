@@ -18,6 +18,7 @@ export default async function handler(req, res) {
             }
         }
         
+        
         const client = createClient()
         await client.connect()
         try {
