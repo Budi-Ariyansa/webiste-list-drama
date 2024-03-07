@@ -33,7 +33,7 @@ async function getData() {
 
 export default async function Home() {
     const [list_kdrama, list_year] = await getData()
-    const list_status = [{"kdrama_status":"Ongoing"}, {"kdrama_status":"Complete"}]
+    const list_status = [{ "kdrama_status": "Ongoing" }, { "kdrama_status": "Complete" }]
 
     return (
         <>
@@ -43,10 +43,10 @@ export default async function Home() {
             </div>
             <main>
                 <div className='container mx-auto'>
-                    
+
                     <div className="grid grid-cols-2 place-items-center mt-4 gap-2">
-                        <FilterComponent list_data={list_year} label="Tahun" disabled={false}/>
-                        <FilterComponent list_data={list_status} label="Status" disabled={true}/>
+                        <FilterComponent list_data={list_year} label="Tahun" disabled={false} />
+                        <FilterComponent list_data={list_status} label="Status" disabled={true} />
                     </div>
 
                     <div className='flex justify-center '>
@@ -54,17 +54,17 @@ export default async function Home() {
                             {
                                 list_kdrama.map((drama) => (
                                     <CardComponent key={drama.kdrama_id}
-                                        kdrama_id = {drama.kdrama_id}
-                                        kdrama_image_url = {drama.kdrama_image_url}
-                                        kdrama_name = {drama.kdrama_name}
-                                        kdrama_guarantee = {drama.kdrama_guarantee}
-                                        kdrama_total_episode = {drama.kdrama_total_episode}
-                                        kdrama_status = {drama.kdrama_status}
-                                        kdrama_publish_date = {drama.kdrama_publish_date}
-                                        kdrama_duration = {drama.kdrama_duration}
-                                        kdrama_content_rating = {drama.kdrama_content_rating}
-                                        kdrama_rating = {drama.kdrama_rating}
-                                        kdrama_where_to_watch = {drama.kdrama_where_to_watch}
+                                        kdrama_id={drama.kdrama_id}
+                                        kdrama_image_url={drama.kdrama_image_url}
+                                        kdrama_name={drama.kdrama_name}
+                                        kdrama_guarantee={drama.kdrama_guarantee}
+                                        kdrama_total_episode={drama.kdrama_total_episode}
+                                        kdrama_status={drama.kdrama_status}
+                                        kdrama_publish_date={drama.kdrama_publish_date}
+                                        kdrama_duration={drama.kdrama_duration}
+                                        kdrama_content_rating={drama.kdrama_content_rating}
+                                        kdrama_rating={drama.kdrama_rating}
+                                        kdrama_where_to_watch={drama.kdrama_where_to_watch}
                                     />
                                 ))
                             }
@@ -74,7 +74,7 @@ export default async function Home() {
             </main>
             <div className="sticky bottom-0">
                 <div className="p-3">
-                    <ToastComponent 
+                    <ToastComponent
                         title="Informasi"
                         content="Rating yang diberikan merupakan rating pribadi bukan rating umum. Dan bisa berubah sewaktu - waktu sesuai pendapat penulis 😊"
                         show={true}
@@ -85,5 +85,4 @@ export default async function Home() {
             <FooterComponent />
         </>
     )
-
 }

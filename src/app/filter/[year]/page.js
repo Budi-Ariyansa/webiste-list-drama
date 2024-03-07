@@ -31,7 +31,7 @@ async function getData(filter_year) {
     }
 }
 
-export default async function Testing({params}) {
+export default async function Filter({params}) {
     const filter_year = params.year
     const [list_kdrama, list_year] = await getData(filter_year)
     const list_status = [{"kdrama_status":"Ongoing"}, {"kdrama_status":"Complete"}]
