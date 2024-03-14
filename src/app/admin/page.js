@@ -59,6 +59,7 @@ export default function Admin() {
         "Kdrama Duration": ["kdrama_duration", "text"],
         "Kdrama Content Rating": ["kdrama_content_rating", ["select", ["13+ - Teens 13 or older", "15+ - Teens 15 or older", "18+ Restricted", "18+ Restricted (violence & profanity)"]]]
     }
+    
     return (
         <>
             <div className='header bg-slate-500 ' id='header'>
