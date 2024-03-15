@@ -11,7 +11,7 @@ export default function InputLabelComponent(props) {
                 <select className="rounded-lg" id={element_id} name={element_id} required={required}>
                     {
                         input_type[1].map((data) => (
-                            <option key={data} value={data}>{data}</option>
+                            <option key={data} value={data == "Guarantee" ? 1 : (data == "Not Really" ? 0 : data)}>{data}</option>
                         ))
                     }
                 </select>
